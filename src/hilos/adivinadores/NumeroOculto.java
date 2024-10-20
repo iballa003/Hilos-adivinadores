@@ -13,20 +13,20 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 class NumeroOculto {
-    private final int numeroOculto;
+    private final int propuestaNumero;
     private final AtomicBoolean juegoTerminado = new AtomicBoolean(false);
 
     public NumeroOculto() {
         Random rand = new Random();
-        this.numeroOculto = rand.nextInt(101);
-        System.out.println("Número oculto generado: " + numeroOculto);
+        this.propuestaNumero = rand.nextInt(101);
+        System.out.println("Número oculto generado: " + propuestaNumero);
     }
 
     public synchronized int propuestaNumero(int num) {
         if (juegoTerminado.get()) {
             return -1;
         }
-        if (num == numeroOculto) {
+        if (num == propuestaNumero) {
             juegoTerminado.set(true);
             return 1; 
         }
