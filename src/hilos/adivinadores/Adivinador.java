@@ -27,7 +27,7 @@ class Adivinador extends Thread {
 
             int resultado = numeroOculto.propuestaNumero(intento);
             if (resultado == 1) {
-                System.out.println(getName() + " ha adivinado el número correcto!");
+                System.out.println(getName() + " ha adivinado el numero correcto!");
                 break; // Termina el hilo porque adivinó
             } else if (resultado == -1) {
                 System.out.println(getName() + " se detiene porque el juego ha terminado.");

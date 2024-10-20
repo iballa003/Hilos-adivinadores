@@ -18,7 +18,7 @@ public class HilosAdivinadores {
         Adivinador[] hilos = new Adivinador[10];
         
         for (int i = 0; i < 10; i++) {
-            hilos[i] = new Adivinador(numeroOculto, "Adivinador-" + (i + 1));
+            hilos[i] = new Adivinador(numeroOculto, "Hilo-" + (i + 1));
             hilos[i].start();
         }
 
