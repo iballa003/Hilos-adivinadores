@@ -14,7 +14,7 @@ public class HilosAdivinadores {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        NumeroOculto numeroOculto = new NumeroOculto();
+        NumeroOculto numeroOculto = new NumeroOculto(100);
         Adivinador[] hilos = new Adivinador[10];
         
         for (int i = 0; i < 10; i++) {
