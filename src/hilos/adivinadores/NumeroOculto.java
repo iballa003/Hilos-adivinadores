@@ -1,27 +1,18 @@
 package hilos.adivinadores;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Usuario
- */
 import java.util.Random;
 
-class NumeroOculto {
+public class NumeroOculto {
     private final int numeroOculto;
-    private boolean juegoTerminado = false;
+    private boolean juegoTerminado;
 
-    public NumeroOculto(int maxNumero) {
-        Random random = new Random();
-        this.numeroOculto = random.nextInt(maxNumero + 1);
-        System.out.println("El número oculto es: " + this.numeroOculto);
+    public NumeroOculto() {
+        Random rand = new Random();
+        this.numeroOculto = rand.nextInt(101);
+        this.juegoTerminado = false;
     }
 
-    public synchronized int propuestaNumero(int num) {
+    synchronized public int propuestaNumero(int num) {
         if (juegoTerminado) {
             return -1;
         }
@@ -32,7 +23,8 @@ class NumeroOculto {
         return 0;
     }
 
-    public boolean isJuegoTerminado() {
-        return juegoTerminado;
+    public int getNumeroOculto() {
+        return numeroOculto;
     }
 }
+
